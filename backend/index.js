@@ -19,13 +19,13 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(
   cors({
-    origin: ["https://note-sync-beta.vercel.app"], // Frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-    credentials: true, // Important for cookies/auth
+    origin: ["https://note-sync-beta.vercel.app"], 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    allowedHeaders: ["Content-Type", "Authorization"], 
+    credentials: true, 
   })
 );
-
+app.options("*", cors());
 
 app.use("/api/auth", authRouter)
 app.use("/api/note", noteRouter)
