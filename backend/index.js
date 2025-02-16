@@ -12,21 +12,19 @@ dotenv.config()
 // Connect to mongoDB
 connectDB();
 
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => {
-//     console.log("Connected to mongoDB")
-//   })
-//   .catch((err) => {
-//     console.log(err)
-//   })
-
 const app = express()
 
 // to make input as json
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({ origin: ["http://localhost:5173"], credentials: true }))
+app.use(
+  cors({
+    origin: ["https://note-sync-beta.vercel.app"], // Frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    credentials: true, // Important for cookies/auth
+  })
+);
 
 
 app.use("/api/auth", authRouter)
