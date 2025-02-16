@@ -2,6 +2,8 @@
 
 A full-stack note-taking web application where users can create, update, delete, pin, and search notes seamlessly. Built with React, Node.js, and MongoDB.
 
+## Live Demo:- https://note-sync-beta.vercel.app/
+
 ## 🚀 Features
 
 ✅ Create Notes — Users can add new notes with titles and descriptions.
