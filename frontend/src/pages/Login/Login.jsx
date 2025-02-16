@@ -40,7 +40,7 @@ const Login = () => {
       dispatch(signInStart())
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signin",
+        "https://notesync-xoab.onrender.com/api/auth/signin",
         { email, password },
         { withCredentials: true }
       )
